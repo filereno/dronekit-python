@@ -49,12 +49,12 @@ def arm_and_takeoff(targetHeight):
 
 
 	while True:
-		print("Current Altitude: %d"%vehicle.location.global_relative_frame.alt)
+		print("Current Altitude: %d"%vehicle.location.global_relative_frame.alt, targetHeight)
+
 		if vehicle.location.global_relative_frame.alt>=.92*targetHeight:
 			break
 		time.sleep(1)
 	print("Target altitude reached!!")
-
 	return None
 
 def send_local_ned_velocity(vx, vy, vz, duration):
@@ -98,12 +98,9 @@ def send_global_ned_velocity(vx, vy, vz, duration):
         time.sleep(1)
     vehicle.commands.upload()
 ##########MAIN EXECUTABLE###########
-
+altitude = 10
 vehicle = connectMyCopter()
-arm_and_takeoff(10)
+arm_and_takeoff(altitude)
 time.sleep(2)
 
-send_local_ned_velocity(5,5,0,5)
-
-
-
+# send_local_ned_velocity(5,5,0,5)
