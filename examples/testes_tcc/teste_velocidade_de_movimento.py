@@ -144,153 +144,153 @@ if __name__ == "__main__":
     # time.sleep(5)
 
     # while counter<2:
-    # 	send_local_ned_velocity(1,0,0)
+    # 	send_global_ned_velocity(1,0,0)
     # 	time.sleep(1)
     # 	print("Moving NORTH relative to front of drone")
     # 	counter=counter+1
 
     # time.sleep(2)
-    # counter=0
-    # vel1=0
-    # vel2=0
-    # vel3=0
-    # while counter <= 2:
-    #     counter=counter+1
-    #     vel1= vel1+1           # 0x   0y
-    #     send_local_ned_velocity(vel1,vel2,vel3)
-    #     print("NORTE")
-    #     time.sleep(1)
-    #     if counter == 2:               #  NORTE
-    #         while counter >= 0:        # +x   0y
-    #             send_local_ned_velocity(vel1,vel2,vel3)
-    #             print("OESTE")
-    #             counter=counter-1
-    #             vel1=vel1-1# x
-    #             vel2=vel2+1# y
-    #             time.sleep(1)
-    #             if counter == 0:               # OESTE
-    #                 while counter <= 2:        # 0x    +y
-    #                     send_local_ned_velocity(vel1,vel2,vel3)
-    #                     print("SUL")
-    #                     counter=counter+1
-    #                     vel1=vel1-1# x
-    #                     vel2=vel2-1# y
-    #                     time.sleep(1)
-    #                     if counter == 2:               # SUL
-    #                         while counter >= 0:        # -x    0y
-    #                             send_local_ned_velocity(vel1,vel2,vel3)
-    #                             print("LESTE")
-    #                             counter = counter-1
-    #                             vel1 = vel1+1# x
-    #                             vel2 = vel2-1# y
-    #                             time.sleep(1)
-    #                             if counter == 0:               # LESTE
-    #                                 while counter <= 2:        # 0x    -y
-    #                                     send_local_ned_velocity(vel1,vel2,vel3)
-    #                                     print("NORTE")
-    #                                     counter = counter+1
-    #                                     vel1 = vel1+1# x
-    #                                     vel2 = vel2+1# y
-    #                                     time.sleep(1)
-    #                                     if counter == 2:
-    #                                         print("TESTE")
-    #                                         send_local_ned_velocity(0,0,0)
+    counter=0
+    vel1=0
+    vel2=0
+    vel3=0
+    while counter <= 2:
+        counter=counter+1
+        vel1= vel1+1           # 0x   0y
+        send_global_ned_velocity(vel1,vel2,vel3)
+        print("NORTE")
+        time.sleep(1)
+        if counter == 2:               #  NORTE
+            while counter >= 0:        # +x   0y
+                send_global_ned_velocity(vel1,vel2,vel3)
+                print("OESTE")
+                counter=counter-1
+                vel1=vel1-1# x
+                vel2=vel2+1# y
+                time.sleep(1)
+                if counter == 0:               # OESTE
+                    while counter <= 2:        # 0x    +y
+                        send_global_ned_velocity(vel1,vel2,vel3)
+                        print("SUL")
+                        counter=counter+1
+                        vel1=vel1-1# x
+                        vel2=vel2-1# y
+                        time.sleep(1)
+                        if counter == 2:               # SUL
+                            while counter >= 0:        # -x    0y
+                                send_global_ned_velocity(vel1,vel2,vel3)
+                                print("LESTE")
+                                counter = counter-1
+                                vel1 = vel1+1# x
+                                vel2 = vel2-1# y
+                                time.sleep(1)
+                                if counter == 0:               # LESTE
+                                    while counter <= 2:        # 0x    -y
+                                        send_global_ned_velocity(vel1,vel2,vel3)
+                                        print("NORTE")
+                                        counter = counter+1
+                                        vel1 = vel1+1# x
+                                        vel2 = vel2+1# y
+                                        time.sleep(1)
+                                        if counter == 2:
+                                            print("TESTE")
+                                            send_global_ned_velocity(0,0,0)
 
-    #                                 else:
-    #                                     break
-    #                         else:
-    #                             break
-    #                 else:
-    #                     break
-    #         else:
-    #             break
-    # else:
-    #     pass
+                                    else:
+                                        break
+                            else:
+                                break
+                    else:
+                        break
+            else:
+                break
+    else:
+        pass
 
-    i = 0
-    while i < 100:
-        print("teste")
-        if i <= 5:
-            print(i)
-            send_local_ned_velocity(1,0,0)
-            time.sleep(0.2)
-        elif i > 5 and i <= 10:
-            print(i)
-            send_local_ned_velocity(-0.2,0,0)
-            time.sleep(0.2)
-        elif i > 10 and i <= 15:
-            print(i)
-            send_local_ned_velocity(-0.7,0,0)
-            time.sleep(0.2)
-        elif i > 15 and i <= 20:
-            print(i)
-            send_local_ned_velocity(0.1,0,0)
-            time.sleep(0.2)
-        elif i > 20 and i <= 25:
-            print(i)
-            send_local_ned_velocity(1,0,0)
-            time.sleep(0.2)
-        elif i > 25 and i <= 30:
-            print(i)
-            send_local_ned_velocity(0,-1,0)
-            time.sleep(0.2)
-        elif i > 30 and i <= 35:
-            print(i)
-            send_local_ned_velocity(0,0.5,0)
-            time.sleep(0.2)
-        elif i > 35 and i <= 40:
-            print(i)
-            send_local_ned_velocity(0,0.9,0)
-            time.sleep(0.2)
-        elif i > 40 and i <= 45:
-            print(i)
-            send_local_ned_velocity(0,1,0)
-            time.sleep(0.2)
-        elif i > 45 and i <= 50:
-            print(i)
-            send_local_ned_velocity(0,-0.6,0)
-            time.sleep(0.2)
-        elif i > 50 and i <= 55:
-            print(i)
-            send_local_ned_velocity(1,0,0)
-            time.sleep(0.2)
-        elif i > 55 and i <= 60:
-            print(i)
-            send_local_ned_velocity(0,-0.4,0)
-            time.sleep(0.2)
-        elif i > 60 and i <= 65:
-            print(i)
-            send_local_ned_velocity(-0.9,0,0)
-            time.sleep(0.2)
-        elif i > 65 and i <= 70:
-            print(i)
-            send_local_ned_velocity(0,0,0)
-            time.sleep(0.2)
-        elif i > 70 and i <= 75:
-            print(i)
-            send_local_ned_velocity(0,1,0)
-            time.sleep(0.2)
-        elif i > 75 and i <= 80:
-            print(i)
-            send_local_ned_velocity(0,-1,0)
-            time.sleep(0.2)
-        elif i > 80 and i <= 85:
-            print(i)
-            send_local_ned_velocity(0.7,0,0)
-            time.sleep(0.2)
-        elif i > 85 and i <= 90:
-            print(i)
-            send_local_ned_velocity(1,0,0)
-            time.sleep(0.2)
-        elif i > 90 and i <= 95:
-            print(i)
-            send_local_ned_velocity(0,-0.1,0)
-            time.sleep(0.2)
-        elif i <=100:
-            print(i)
-            send_local_ned_velocity(0,0,0)
-            time.sleep(0.2)
+    # i = 0
+    # while i < 100:
+    #     print("teste")
+    #     if i <= 5:
+    #         print(i)
+    #         send_local_ned_velocity(1,0,0)
+    #         time.sleep(0.2)
+    #     elif i > 5 and i <= 10:
+    #         print(i)
+    #         send_local_ned_velocity(-0.2,0,0)
+    #         time.sleep(0.2)
+    #     elif i > 10 and i <= 15:
+    #         print(i)
+    #         send_local_ned_velocity(-0.7,0,0)
+    #         time.sleep(0.2)
+    #     elif i > 15 and i <= 20:
+    #         print(i)
+    #         send_local_ned_velocity(0.1,0,0)
+    #         time.sleep(0.2)
+    #     elif i > 20 and i <= 25:
+    #         print(i)
+    #         send_local_ned_velocity(1,0,0)
+    #         time.sleep(0.2)
+    #     elif i > 25 and i <= 30:
+    #         print(i)
+    #         send_local_ned_velocity(0,-1,0)
+    #         time.sleep(0.2)
+    #     elif i > 30 and i <= 35:
+    #         print(i)
+    #         send_local_ned_velocity(0,0.5,0)
+    #         time.sleep(0.2)
+    #     elif i > 35 and i <= 40:
+    #         print(i)
+    #         send_local_ned_velocity(0,0.9,0)
+    #         time.sleep(0.2)
+    #     elif i > 40 and i <= 45:
+    #         print(i)
+    #         send_local_ned_velocity(0,1,0)
+    #         time.sleep(0.2)
+    #     elif i > 45 and i <= 50:
+    #         print(i)
+    #         send_local_ned_velocity(0,-0.6,0)
+    #         time.sleep(0.2)
+    #     elif i > 50 and i <= 55:
+    #         print(i)
+    #         send_local_ned_velocity(1,0,0)
+    #         time.sleep(0.2)
+    #     elif i > 55 and i <= 60:
+    #         print(i)
+    #         send_local_ned_velocity(0,-0.4,0)
+    #         time.sleep(0.2)
+    #     elif i > 60 and i <= 65:
+    #         print(i)
+    #         send_local_ned_velocity(-0.9,0,0)
+    #         time.sleep(0.2)
+    #     elif i > 65 and i <= 70:
+    #         print(i)
+    #         send_local_ned_velocity(0,0,0)
+    #         time.sleep(0.2)
+    #     elif i > 70 and i <= 75:
+    #         print(i)
+    #         send_local_ned_velocity(0,1,0)
+    #         time.sleep(0.2)
+    #     elif i > 75 and i <= 80:
+    #         print(i)
+    #         send_local_ned_velocity(0,-1,0)
+    #         time.sleep(0.2)
+    #     elif i > 80 and i <= 85:
+    #         print(i)
+    #         send_local_ned_velocity(0.7,0,0)
+    #         time.sleep(0.2)
+    #     elif i > 85 and i <= 90:
+    #         print(i)
+    #         send_local_ned_velocity(1,0,0)
+    #         time.sleep(0.2)
+    #     elif i > 90 and i <= 95:
+    #         print(i)
+    #         send_local_ned_velocity(0,-0.1,0)
+    #         time.sleep(0.2)
+    #     elif i <=100:
+    #         print(i)
+    #         send_local_ned_velocity(0,0,0)
+    #         time.sleep(0.2)
 
-        i += 1
-        #time.sleep(1)
-        print("Done!") 
+    #     i += 1
+    #     #time.sleep(1)
+        print("Done!")
